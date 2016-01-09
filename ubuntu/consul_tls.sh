@@ -1,19 +1,11 @@
-#!/bin/bash
-
-sudo cat <<EOF >/opt/consul/tls/ca.pem
-${ca}
-EOF
+echo "${ca}" | sudo tee /opt/consul/tls/ca.pem
 sudo chown root:consul /opt/consul/tls/ca.pem
 sudo chmod 640 /opt/consul/tls/ca.pem
 
-sudo cat <<EOF >/opt/consul/tls/cert.pem
-${cert}
-EOF
+echo "${cert}" | sudo tee /opt/consul/tls/cert.pem
 sudo chown root:consul /opt/consul/tls/cert.pem
 sudo chmod 640 /opt/consul/tls/cert.pem
 
-sudo cat <<EOF >/opt/consul/tls/key.pem
-${key}
-EOF
+echo "${key}" | sudo tee /opt/consul/tls/key.pem
 sudo chown root:consul /opt/consul/tls/key.pem
 sudo chmod 640 /opt/consul/tls/key.pem
