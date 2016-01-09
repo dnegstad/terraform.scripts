@@ -1,3 +1,5 @@
+#!/bin/bash
+
 echo "${ca}" | sudo tee /opt/consul/tls/ca.pem
 sudo chown root:consul /opt/consul/tls/ca.pem
 sudo chmod 640 /opt/consul/tls/ca.pem
