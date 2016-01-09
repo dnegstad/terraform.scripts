@@ -1,5 +1,7 @@
 #!/bin/bash
 
+sudo mkdir -p /opt/consul/tls
+
 sudo cat <<EOF >/opt/consul/tls/ca.pem
 ${ca}
 EOF
